@@ -1,0 +1,33 @@
+{
+  "name": "stln-bike-api",
+  "version": "1.0.0",
+  "description": "Node API for management stolen users bicycles",
+  "main": "server.js",
+  "scripts": {
+    "start:local": "NODE_ENV=development node ./server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danncortes/stln-bike-api.git"
+  },
+  "keywords": [
+    "Node",
+    "NodeJs",
+    "Express",
+    "Mongoose",
+    "MongoDB"
+  ],
+  "author": "danncortes@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danncortes/stln-bike-api/issues"
+  },
+  "homepage": "https://github.com/danncortes/stln-bike-api#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongodb": "^3.1.12",
+    "mongoose": "^5.4.5"
+  }
+}
