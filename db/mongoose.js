@@ -19,4 +19,4 @@ mongoose.connection.on('connected', function () {
   console.log(`Connected to ${urlPath}`);
 });
 
-module.export = { mongoose };
+module.exports = { mongoose };
