@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const { User } = require('./models/user');
+const { User } = require('../models/user');
 
 const app = express();
 app.use(bodyParser.json());
@@ -19,4 +19,5 @@ app.listen(3000, () => {
 });
 
 module.export = { app };
+
 
