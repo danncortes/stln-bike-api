@@ -7,7 +7,6 @@ const userRouter = require('./routes/userRouter');
 const app = express();
 
 app.use(userRouter);
-app.use(bikeRouter);
 app.use(bodyParser.json());
 
 const { NODE_ENV } = process.env;

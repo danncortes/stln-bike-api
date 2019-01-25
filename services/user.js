@@ -8,9 +8,20 @@ const user = {
       res.status(400).send(err)
     })
   },
-  create: () => { },
-  update: () => { },
-  delete: () => { }
+  create: () => {
+
+  },
+  update: () => {
+
+  },
+  remove: (req, res) => {
+    const { id } = req.params;
+    User.findByIdAndRemove(id).then(user => {
+      res.send({ user })
+    }, err => {
+      res.status(400).send(err)
+    });
+  }
 }
 
 module.exports = user;

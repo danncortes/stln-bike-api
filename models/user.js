@@ -23,20 +23,6 @@ const userSquema = mongoose.Schema({
   }
 });
 
-// const user = new User({
-//   fullName: 'Daniel',
-//   idn: '1127597664',
-//   phone: 3043613543,
-//   email: 'danncortes@gmail.com',
-//   password: 'admin',
-// });
-
-// user.save().then(res => {
-//   console.log('User Created!')
-// }, (err) => {
-//   console.log(err)
-// });
-
 module.exports = mongoose.model('User', userSquema);
 
 
