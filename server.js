@@ -19,6 +19,8 @@ switch (NODE_ENV) {
   case 'production':
     urlPath = 'mongodb://xxx:27017/stlnBikeApp';
     break;
+  default:
+    urlPath = 'mongodb://localhost:27017/stlnBikeApp';
 }
 
 mongoose.Promise = global.Promise;

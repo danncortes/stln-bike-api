@@ -12,7 +12,6 @@ const user = {
 
   },
   update: () => {
-
   },
   remove: (req, res) => {
     const { id } = req.params;
