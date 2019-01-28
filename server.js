@@ -10,17 +10,16 @@ app.use(userRouter);
 app.use(bodyParser.json());
 
 const { NODE_ENV } = process.env;
-let urlPath = '';
+let urlPath = 'mongodb://localhost:27017/stlnBikeApp';
+let port = 3000;
 
 switch (NODE_ENV) {
-  case 'development':
-    urlPath = 'mongodb://localhost:27017/stlnBikeApp';
-    break;
   case 'production':
     urlPath = 'mongodb://xxx:27017/stlnBikeApp';
     break;
-  default:
-    urlPath = 'mongodb://localhost:27017/stlnBikeApp';
+  case 'test':
+    port = 3001;
+    break;
 }
 
 mongoose.Promise = global.Promise;
@@ -30,8 +29,8 @@ mongoose.connection.on('connected', function () {
   console.log(`Connected to ${urlPath}`);
 });
 
-app.listen(3000, () => {
-  console.log('Server has started at port 3000');
+app.listen(port, () => {
+  console.log(`Server has started at port ${port}`);
 });
 
 module.exports = { app };
