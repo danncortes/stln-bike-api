@@ -6,8 +6,8 @@ const userRouter = require('./routes/userRouter');
 
 const app = express();
 
-app.use(userRouter);
 app.use(bodyParser.json());
+app.use(userRouter);
 
 const { NODE_ENV } = process.env;
 let urlPath = 'mongodb://localhost:27017/stlnBikeApp';
