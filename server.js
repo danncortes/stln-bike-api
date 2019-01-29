@@ -11,14 +11,14 @@ app.use(userRouter);
 
 const { NODE_ENV } = process.env;
 let urlPath = 'mongodb://localhost:27017/stlnBikeApp';
-let port = 3000;
+let port = 3001;
 
 switch (NODE_ENV) {
   case 'production':
     urlPath = 'mongodb://xxx:27017/stlnBikeApp';
     break;
   case 'test':
-    port = 3001;
+    port = 3002;
     break;
 }
 
