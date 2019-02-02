@@ -11,6 +11,11 @@ const fetchAll = (req, res) => {
 
 const fetch = (req, res) => {
   const { id } = req.params;
+
+  if (!ObjectID.isValid(id)) {
+    res.status(404).send();
+  }
+
   User.findById(id).then(user => {
     res.send({ user })
   }, err => {
@@ -25,13 +30,13 @@ const update = (req, res) => {
     res.status(404).send();
   }
   const newUser = req.body;
-  
-  User.findByIdAndUpdate(id, newUser, {new: true})
-  .then(user => {
-    res.send({ user });
-  }, err => {
-    res.status(400).send(err)
-  })
+
+  User.findByIdAndUpdate(id, { $set: newUser }, { new: true })
+    .then(user => {
+      res.send({ user });
+    }, err => {
+      res.status(400).send(err)
+    })
 };
 
 const remove = (req, res) => {

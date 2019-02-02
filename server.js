@@ -10,14 +10,20 @@ app.use(bodyParser.json());
 app.use(userRouter);
 
 const { NODE_ENV } = process.env;
-let urlPath = 'mongodb://localhost:27017/stlnBikeApp';
+const hostLocal = 'mongodb://localhost:27017/';
+const dataBase = 'stlnBikeApp';
+let urlPath = '';
 let port = 3001;
 
 switch (NODE_ENV) {
   case 'production':
-    urlPath = 'mongodb://xxx:27017/stlnBikeApp';
+    urlPath = `mongodb://xxx:27017/${dataBase}`;
+    break;
+  case 'development':
+    urlPath = `${hostLocal}${dataBase}`;
     break;
   case 'test':
+    urlPath = `${hostLocal}stlnBikeAppTest`;
     port = 3002;
     break;
 }
