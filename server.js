@@ -3,11 +3,13 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const mongoose = require('mongoose');
 const userRouter = require('./routes/userRouter');
+const bikeRouter = require('./routes/bikeRouter');
 
 const app = express();
 
 app.use(bodyParser.json());
 app.use(userRouter);
+app.use(bikeRouter);
 
 const { NODE_ENV } = process.env;
 const hostLocal = 'mongodb://localhost:27017/';
